@@ -410,6 +410,7 @@
     ]
   },
   "application/cpl+xml": {
+    "extensions": ["cpl"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc3880.txt",
       "http://www.iana.org/assignments/media-types/application/cpl+xml"
@@ -776,6 +777,7 @@
     ]
   },
   "application/gml+xml": {
+    "extensions": ["gml"],
     "sources": [
       "http://www.iana.org/assignments/media-types/application/gml+xml"
     ]
@@ -1142,6 +1144,7 @@
     ]
   },
   "application/media-policy-dataset+xml": {
+    "extensions": ["mpf"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc6796.txt",
       "http://www.iana.org/assignments/media-types/application/media-policy-dataset+xml"
@@ -1690,6 +1693,7 @@
     ]
   },
   "application/reginfo+xml": {
+    "extensions": ["rif"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc3680.txt",
       "http://www.iana.org/assignments/media-types/application/reginfo+xml"
@@ -2004,6 +2008,7 @@
     ]
   },
   "application/simple-filter+xml": {
+    "extensions": ["cl"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc4661.txt",
       "http://www.iana.org/assignments/media-types/application/simple-filter+xml"
@@ -7187,6 +7192,7 @@
     ]
   },
   "application/watcherinfo+xml": {
+    "extensions": ["wif"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc3858.txt",
       "http://www.iana.org/assignments/media-types/application/watcherinfo+xml"
@@ -8852,6 +8858,7 @@
     ]
   },
   "message/imdn+xml": {
+    "extensions": ["cl"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc5438.txt",
       "http://www.iana.org/assignments/media-types/message/imdn+xml"

@@ -281,7 +281,8 @@
   },
   "application/cpl+xml": {
     "source": "iana",
-    "compressible": true
+    "compressible": true,
+    "extensions": ["cpl"]
   },
   "application/csrattrs": {
     "source": "iana"
@@ -833,7 +834,8 @@
   },
   "application/media-policy-dataset+xml": {
     "source": "iana",
-    "compressible": true
+    "compressible": true,
+    "extensions": ["mpf"]
   },
   "application/media_control+xml": {
     "source": "iana",
@@ -1433,7 +1435,8 @@
   },
   "application/simple-filter+xml": {
     "source": "iana",
-    "compressible": true
+    "compressible": true,
+    "extensions": ["cl"]
   },
   "application/simple-message-summary": {
     "source": "iana"
@@ -5373,7 +5376,8 @@
   },
   "application/watcherinfo+xml": {
     "source": "iana",
-    "compressible": true
+    "compressible": true,
+    "extensions": ["wif"]
   },
   "application/webpush-options+json": {
     "source": "iana",
@@ -7200,7 +7204,8 @@
   },
   "message/imdn+xml": {
     "source": "iana",
-    "compressible": true
+    "compressible": true,
+    "extensions": ["cl"]
   },
   "message/news": {
     "source": "iana"
