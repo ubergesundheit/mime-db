@@ -1651,6 +1651,7 @@
     ]
   },
   "application/prs.xsf+xml": {
+    "extensions": ["xsf"],
     "sources": [
       "http://www.iana.org/assignments/media-types/application/prs.xsf+xml"
     ]
@@ -3258,6 +3259,7 @@
     ]
   },
   "application/vnd.dece.ttml+xml": {
+    "extensions": ["uvt","uvvt"],
     "sources": [
       "http://www.iana.org/assignments/media-types/application/vnd.dece.ttml+xml"
     ]
@@ -3573,6 +3575,7 @@
     ]
   },
   "application/vnd.eszigno3+xml": {
+    "extensions": ["es3","et3"],
     "sources": [
       "http://www.iana.org/assignments/media-types/application/vnd.eszigno3+xml"
     ]
@@ -5513,6 +5516,7 @@
     ]
   },
   "application/vnd.oma.dd2+xml": {
+    "extensions": ["dd2"],
     "sources": [
       "http://www.iana.org/assignments/media-types/application/vnd.oma.dd2+xml"
     ]
@@ -6219,6 +6223,7 @@
     ]
   },
   "application/vnd.pwg-xhtml-print+xml": {
+    "extensions": ["xhtml","xhtm"],
     "sources": [
       "http://www.iana.org/assignments/media-types/application/vnd.pwg-xhtml-print+xml"
     ]
@@ -8402,6 +8407,7 @@
     ]
   },
   "image/bmp": {
+    "extensions": ["bmp","dib"],
     "sources": [
       "http://tools.ietf.org/rfc/rfc7903.txt",
       "http://www.iana.org/assignments/media-types/image/bmp"
@@ -8582,6 +8588,7 @@
     ]
   },
   "image/prs.btif": {
+    "extensions": ["btif","btf"],
     "sources": [
       "http://www.iana.org/assignments/media-types/image/prs.btif"
     ]
@@ -8646,6 +8653,7 @@
     ]
   },
   "image/vnd.djvu": {
+    "extensions": ["djvu","djv"],
     "sources": [
       "http://www.iana.org/assignments/media-types/image/vnd.djvu"
     ]
@@ -8713,6 +8721,7 @@
     ]
   },
   "image/vnd.mozilla.apng": {
+    "extensions": ["apng","png"],
     "sources": [
       "http://www.iana.org/assignments/media-types/image/vnd.mozilla.apng"
     ]
