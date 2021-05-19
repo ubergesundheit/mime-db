@@ -126,6 +126,7 @@ jobs:
           sudo apt-get install g++-5 gcc-5
           export CC=/usr/bin/gcc-5
           export CXX=/usr/bin/g++-5
+          export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow $_CCCOMCOM $SOURCES'
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
