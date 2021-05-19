@@ -123,11 +123,9 @@ jobs:
       shell: bash -o pipefail -l {0}
       run: |
         if [[ "${{ matrix.node-version }}" == 0.6* ]]; then
-          sudo apt-get remove gcc g++
-          for p in gcc g++; do
-            sudo apt-get install ${p}-5.0
-            sudo ln -s /usr/bin/${p}-5.0 /usr/bin/${p}
-          done
+          sudo apt-get install g++-5 gcc-5
+          export CC=/use/bin/gcc-5
+          export CXX=/usr/bin/g++-5
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
