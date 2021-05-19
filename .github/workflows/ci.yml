@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
         name:
@@ -122,6 +122,10 @@ jobs:
     - name: Install Node.js ${{ matrix.node-version }}
       shell: bash -o pipefail -l {0}
       run: |
+        if [[ "${{ matrix.node-version }}" == 0.6* ]]; then
+          # Suppress Node.js 0.6 compile warnings
+          export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow $_CCCOMCOM $SOURCES'
+        fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
           npm config set strict-ssl false
