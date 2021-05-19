@@ -123,8 +123,11 @@ jobs:
       shell: bash -o pipefail -l {0}
       run: |
         if [[ "${{ matrix.node-version }}" == 0.6* ]]; then
-          # Suppress Node.js 0.6 compile warnings
-          export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow -Wno-implicit-function-declaration $_CCCOMCOM $SOURCES'
+          sudo apt-get remove gcc g++
+          for p in gcc g++; do
+            sudo apt-get install ${p}-5.0
+            sudo ln -s /usr/bin/${p}-5.0 /usr/bin/${p}
+          done
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
