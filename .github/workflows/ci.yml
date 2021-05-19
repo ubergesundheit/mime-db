@@ -120,11 +120,11 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install Node.js ${{ matrix.node-version }}
-      shell: bash -o pipefail -l {0}
+      shell: bash -eo pipefail -l {0}
       run: |
         if [[ "${{ matrix.node-version }}" == 0.6* ]]; then
           sudo apt-get install g++-5 gcc-5
-          export CC=/use/bin/gcc-5
+          export CC=/usr/bin/gcc-5
           export CXX=/usr/bin/g++-5
         fi
         nvm install --default ${{ matrix.node-version }}
