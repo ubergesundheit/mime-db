@@ -133,7 +133,7 @@ jobs:
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
           npm config set strict-ssl false
         fi
-        node -p process.versions
+        node -pe process.versions
         dirname "$(nvm which ${{ matrix.node-version }})" >> "$GITHUB_PATH"
 
     - name: Configure npm
