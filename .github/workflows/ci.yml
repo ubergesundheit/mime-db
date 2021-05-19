@@ -124,7 +124,7 @@ jobs:
       run: |
         if [[ "${{ matrix.node-version }}" == 0.6* ]]; then
           # Suppress Node.js 0.6 compile warnings
-          export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow $_CCCOMCOM $SOURCES'
+          export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow -Wno-implicit-function-declaration $_CCCOMCOM $SOURCES'
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
