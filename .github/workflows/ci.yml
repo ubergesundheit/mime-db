@@ -123,11 +123,15 @@ jobs:
       shell: bash -eo pipefail -l {0}
       run: |
         if [[ "${{ matrix.node-version }}" == 0.6* ]]; then
-          sudo apt-get install g++-5 gcc-5 libssl1.0-dev=1.0.1f-1ubuntu11
+          sudo apt-get install g++-5 gcc-5
           export CC=/usr/bin/gcc-5
           export CXX=/usr/bin/g++-5
           export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow -Wno-unused-variable $_CCCOMCOM $SOURCES'
-          export CONFIGURE_OPTS='--with-openssl-dir=/usr/include/openssl'
+          wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1u.tar.gz
+          tar xzf openssl-1.0.1u.tar.gz
+          (cd openssl-1.0.1u; ./config --prefix=/opt/openssl/1.0.1u; make; sudo make install)
+          export CFLAGS=' -I/opt/openssl/1.0.1u/include'
+          export LDFLAGS="$LDFLAGS -L/opt/openssl/1.0.1u/lib -lssl"
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
