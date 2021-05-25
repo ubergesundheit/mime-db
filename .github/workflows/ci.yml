@@ -140,7 +140,6 @@ jobs:
         fi
         node -pe process.versions
         ldd $(which node)
-        LD_DEBUG=files,libs valgrind -v $(which node) -e 'require("https").get("https://www.google.com")'
         dirname "$(nvm which ${{ matrix.node-version }})" >> "$GITHUB_PATH"
 
     - name: Configure npm
@@ -154,7 +153,7 @@ jobs:
       if: matrix.npm-rm != ''
 
     - name: Install npm module(s) ${{ matrix.npm-i }}
-      run: npm install --save-dev ${{ matrix.npm-i }}
+      run: valgrind npm install --save-dev ${{ matrix.npm-i }}
       if: matrix.npm-i != ''
 
     - name: Setup Node.js version-specific dependencies
