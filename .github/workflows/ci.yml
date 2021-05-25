@@ -153,7 +153,7 @@ jobs:
       if: matrix.npm-rm != ''
 
     - name: Install npm module(s) ${{ matrix.npm-i }}
-      run: valgrind npm install --save-dev ${{ matrix.npm-i }}
+      run: valgrind -v npm install --save-dev ${{ matrix.npm-i }}
       if: matrix.npm-i != ''
 
     - name: Setup Node.js version-specific dependencies
