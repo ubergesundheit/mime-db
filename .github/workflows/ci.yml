@@ -139,7 +139,7 @@ jobs:
         fi
         node -pe process.versions
         ldd $(which node)
-        LD_DEBUG=files,libs $(which node) -r 'require("crypto")'
+        LD_DEBUG=files,libs $(which node) -e 'require("crypto")'
         dirname "$(nvm which ${{ matrix.node-version }})" >> "$GITHUB_PATH"
 
     - name: Configure npm
