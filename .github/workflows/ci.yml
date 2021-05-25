@@ -130,8 +130,8 @@ jobs:
           wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1u.tar.gz
           tar xzf openssl-1.0.1u.tar.gz
           (cd openssl-1.0.1u; ./config --prefix=/opt/openssl/1.0.1u; make; sudo make install_sw)
-          export CXXFLAGS=' -I/opt/openssl/1.0.1u/include'
-          export LDFLAGS="$LDFLAGS -L/opt/openssl/1.0.1u/lib -lssl"
+          export CXXFLAGS="$CXXFLAGS -I/opt/openssl/1.0.1u/include"
+          export LDFLAGS="$LDFLAGS -L/opt/openssl/1.0.1u/lib"
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
