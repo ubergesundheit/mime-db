@@ -131,7 +131,7 @@ jobs:
           tar xzf openssl-1.0.1u.tar.gz
           (cd openssl-1.0.1u; ./config --prefix=/opt/openssl/1.0.1u; make; sudo make install_sw)
           export CXXFLAGS="$CXXFLAGS -I/opt/openssl/1.0.1u/include"
-          export LDFLAGS="$LDFLAGS -L/opt/openssl/1.0.1u/lib -R/opt/openssl/1.0.1u/lib"
+          export LDFLAGS="$LDFLAGS -L/opt/openssl/1.0.1u/lib -Wl,-rpath,/opt/openssl/1.0.1u/lib"
         fi
         nvm install --default ${{ matrix.node-version }}
         if [[ "${{ matrix.node-version }}" == 0.* ]]; then
