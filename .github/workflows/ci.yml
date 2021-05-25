@@ -129,7 +129,7 @@ jobs:
           export CXXCOM='$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-narrowing -Wno-strict-overflow -Wno-unused-variable $_CCCOMCOM $SOURCES'
           wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1u.tar.gz
           tar xzf openssl-1.0.1u.tar.gz
-          (cd openssl-1.0.1u; ./config --prefix=/opt/openssl/1.0.1u; make; sudo make install)
+          (cd openssl-1.0.1u; ./config --prefix=/opt/openssl/1.0.1u; make; sudo make install_sw)
           export CCFLAGS=' -I/opt/openssl/1.0.1u/include'
           export LDFLAGS="$LDFLAGS -L/opt/openssl/1.0.1u/lib -lssl"
         fi
