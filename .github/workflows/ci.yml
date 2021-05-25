@@ -139,6 +139,7 @@ jobs:
           npm config set strict-ssl false
         fi
         node -pe process.versions
+        cat $(which npm)
         ldd $(which node)
         dirname "$(nvm which ${{ matrix.node-version }})" >> "$GITHUB_PATH"
 
